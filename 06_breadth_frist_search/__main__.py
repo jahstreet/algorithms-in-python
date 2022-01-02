@@ -1,7 +1,7 @@
 from collections import deque
 
 
-def dfs(connections_graph: dict, name: str):
+def bfs(connections_graph: dict, name: str):
     checked = set(name)
     queue = deque()
     queue += connections_graph[name]
@@ -26,4 +26,4 @@ if __name__ == '__main__':
     graph["bob"] = ["anuj", "peggy"]
     graph["alice"] = ["peggy"]
     graph["claire"] = ["thom", "jonny"]
-    print(dfs(graph, "you"))  # thom
+    print(bfs(graph, "you"))  # thom
