@@ -37,14 +37,14 @@ def binary_search_recursive(names, name):
 def _binary_search_recursive(names, name, lower, upper):
     if lower > upper:
         return None
-    target = int((upper - lower) / 2)
+    target = int((upper + lower) / 2)
     target_name = names[target]
     if target_name == name:
         return target
     if target_name > name:
         return _binary_search_recursive(names, name, lower, target - 1)
     else:
-        return _binary_search_recursive(names, name, lower, target + 1)
+        return _binary_search_recursive(names, name, target + 1, upper)
 
 
 def quick_sort(arr: array):
